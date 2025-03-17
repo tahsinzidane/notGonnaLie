@@ -23,7 +23,10 @@ app.get('/', (req, res) => {
 });
 
 // all api & routes
+// create user router
 app.use(require('./routes/reguser'));
+// ask queston
+app.use(require('./routes/ask'));
 
 app.use((err, req, res, next) => {
     console.log(err.stack);
