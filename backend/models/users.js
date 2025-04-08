@@ -9,6 +9,11 @@ const UserSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    gender:{
+        type: String,
+        required: true,
+        enum: ['Male', 'Female', 'Car/bike', 'None binary', 'Anime', 'Sigma']
+    },
     askLink:{
         type: String,
     }

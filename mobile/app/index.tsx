@@ -1,5 +1,7 @@
 import { Text, View } from "react-native";
 import { Link } from "expo-router";
+import { Provider as PaperProvider } from "react-native-paper";
+// import Account from "./account";
 
 export default function Index() {
   return (
@@ -61,6 +63,7 @@ export default function Index() {
           Get Your Inbox URL
         </Text>
       </Link>
+
     </View>
   );
 }

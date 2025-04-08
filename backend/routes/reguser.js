@@ -5,10 +5,10 @@ const router = express.Router();
 
 router.post('/register-user', async (req, res) => {
     try {
-        const { username, age } = req.body;
+        const { username, age, gender } = req.body;
 
         // Check if all fields are provided
-        if (!username || !age) {
+        if (!username || !age || !gender) {
             return res.status(400).json({
                 message: 'All fields are required, bruh'
             });
@@ -25,7 +25,8 @@ router.post('/register-user', async (req, res) => {
         // Create new user instance
         const user = new User({
             username,
-            age
+            age,
+            gender
         });
 
         // Save the user first to get the generated ID
@@ -55,6 +56,8 @@ router.post('/register-user', async (req, res) => {
     }
 });
 
+
+// get all users (for admin moderation)
 router.get('/users', async (req, res) => {
     try {
         // Fetch all users from the database
