@@ -6,7 +6,8 @@ const app = express();
 const port = process.env.PORT || 3000
 
 app.use(cors({
-    origin: 'exp://192.168.0.105:8081' || 'http://localhost:8081',
+    // origin: 'exp://192.168.0.105:8081' || 'http://localhost:8081',
+    origin: '*'
 }))
 
 // middlewares for db

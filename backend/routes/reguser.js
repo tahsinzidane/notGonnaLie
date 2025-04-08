@@ -41,6 +41,7 @@ router.post('/register-user', async (req, res) => {
         await savedUser.save();
 
         // Return success response with the user data and ask link
+        console.log('✅ Request received:', req.body);
         res.status(201).json({
             message: 'User saved successfully',
             user: savedUser,
