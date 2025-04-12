@@ -1,7 +1,7 @@
 import { Text, View } from "react-native";
 import { Link } from "expo-router";
 import { Provider as PaperProvider } from "react-native-paper";
-// import Account from "./account";
+// import Home from "./screens/Home";
 
 export default function Index() {
   return (
@@ -39,7 +39,7 @@ export default function Index() {
       </Text>
 
       <Link
-        href="/account"
+        href="/screens/account"
         style={{
           backgroundColor: "#04AA6D",
           paddingVertical: 15,
@@ -63,6 +63,8 @@ export default function Index() {
           Get Your Inbox URL
         </Text>
       </Link>
+
+      <Link href={"/screens/Home"}>go to home</Link>
 
     </View>
   );
