@@ -1,50 +1,90 @@
-# Welcome to your Expo app 👋
+```markdown
+# notGonnaLie 😶‍🌫️  
+**Confess. Anonymously. Honestly.**
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Welcome to **notGonnaLie**, the mobile app where you can send and receive anonymous confessions, questions, or just plain vibes. No pressure. Just honesty. ✨
 
-## Get started
+---
 
-1. Install dependencies
+## 🚀 Getting Started
 
+### Prerequisites
+Make sure you've got these tools installed:
+
+- **Node.js** (v18+ recommended)
+- **Expo CLI**:  
+  ```bash
+  npm install -g expo-cli
+  ```
+- **Git** (optional but helpful)
+- A device or emulator to run the app (Expo Go on Android/iOS or an emulator like Android Studio)
+
+---
+
+### 📦 Clone the Repo
+
+```bash
+git clone https://github.com/your-username/notGonnaLie.git
+cd notGonnaLie/mobile
+```
+
+---
+
+### 📲 Run the App
+
+1. Install dependencies:
    ```bash
    npm install
    ```
 
-2. Start the app
-
+2. Start the Expo server:
    ```bash
-    npx expo start
+   npm start
+   ```
+   or
+   ```bash
+   expo start
    ```
 
-In the output, you'll find options to open the app in a
+3. Open the app:
+   - On your phone, scan the QR code using the **Expo Go** app.
+   - Or run it on an emulator (Android Studio or iOS Simulator).
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 🛠️ Tech Stack
 
-## Get a fresh project
+- **React Native** via Expo
+- **Expo Router** for navigation
+- **Backend API** (Express.js)
+- **MongoDB** for storing confessions
 
-When you're ready, run:
+---
 
-```bash
-npm run reset-project
-```
+## 🧪 Features (so far)
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+- Anonymous confession system
+- View incoming confessions
+- Clean and minimal UI
+- Confession sharing link (like NGL 👀)
 
-## Learn more
+---
 
-To learn more about developing your project with Expo, look at the following resources:
+## 💡 Ideas to Add
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- Like / react to confessions
+- Anti-spam filters
+- Public profiles
+- Notifications 🔔
 
-## Join the community
+---
 
-Join our community of developers creating universal apps.
+## 🤝 Contributing
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Feel free to fork the repo, make changes, and pull request. Keep it chill, clean, and maintain the vibe.
+
+---
+
+## 📄 License
+
+MIT License — because honesty should be free.

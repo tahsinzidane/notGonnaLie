@@ -1,117 +1,83 @@
-# Not Gonna Lie - Backend Setup
+# notGonnaLie (NGL) 😶‍🌫️  
+**Share what's really on your mind. Anonymously.**
 
-Follow this step-by-step guide to get the backend up and running.
-
-## Prerequisites
-
-Make sure you have **Node.js** installed on your machine. You can download it from [here](https://nodejs.org/).
-
-## Setup
-
-### 1. Clone the Repository
-Clone the project to your local machine:
-
-```bash
-git clone https://github.com/tahsinzidane/notGonnaLie.git
-```
-
-### 2. Navigate to the Project Directory
-Change to the project directory:
-
-```bash
-cd notGonnaLie
-```
-
-### 3. Install Dependencies
-Install the required dependencies by running:
-
-```bash
-npm install
-```
-
-### 4. Set Up Environment Variables
-Create an `.env` file to store the environment variables:
-
-```bash
-new-Item .env
-```
-
-### 5. Configure the `.env` File
-Open the `.env` file:
-
-```bash
-code .env
-```
-
-Inside the `.env` file, add the following configuration:
-
-```
-PORT=3000
-DB_URI=mongodb://localhost:27017/not-gonna-lie
-```
-
-Make sure to update any configuration values to match your setup.
-
-### 6. Start the Project
-Now you’re ready to run the project. Start the backend by typing:
-
-```bash
-npm run start
-```
-
-The server will start running, and your project should be up and running!
+# Still Cooking...
+> This feature is currently in the lab under heavy code, caffeine, and creativity. Stay tuned for the magic. ✨
 
 ---
 
-## API Endpoints
+## 🧠 What is NGL?
 
-### 1. **POST** `/register-user`
-This endpoint creates a new user account by asking for a **username** and **age**.
+**NGL (Not Gonna Lie)** is a modern anonymous messaging app built for Gen Z.  
+It lets people send you **anonymous confessions, questions, or messages**, and you can reply to them publicly.
 
-#### Request Body:
-```json
-{
-  "username": "speed",
-  "age": 20
-}
-```
+> **NGL = Not Gonna Lie**  
+Because sometimes, you just wanna say something that’s too real to say directly.
 
-#### Response:
-If successful, the response will return the **userId** URL:
-```json
-{
-    "message": "User saved successfully",
-    "user": {
-        "username": "speed",
-        "age": 20,
-        "_id": "67db29f4855fc3c9277612d9",
-        "createdAt": "2025-03-19T20:32:52.826Z",
-        "updatedAt": "2025-03-19T20:32:52.826Z",
-        "__v": 0
-    },
-    "askLink": "http://localhost:<port number>/ask/67db29f4855fc3c9277612d9"
-}
-```
+---
 
-### 2. **POST** `/submit-question/:userId`
-This endpoint allows a user to submit a question. The **userId** is passed as a parameter in the URL.
+## 🎯 Why i Built NGL
 
-#### Request Body:
-```json
-{
-  "question": "What is your favorite color?"
-}
-```
+Sometimes you wanna:
 
-#### Response:
-The question is saved to the database and a confirmation message is returned:
-```json
-{
-    "message": "Your question has been successfully submitted!",
-    "questionData": {
-        "userId": "67db29f4855fc3c9277612d9",
-        "question": "what is your favorite color ? ",
-        "date": "2025-03-19T20:36:13.415Z"
-    }
-}
-```
+- Confess to your crush 😳  
+- Ask something deep 👀  
+- Send a compliment without it being awkward 😌  
+- Say what’s on your heart but stay anonymous 🫣  
+
+But you can't always do that in the DMs.
+
+**notGonnaLie** is a space where people can be real without fear of judgment.
+
+---
+
+## 🤳 How It Works
+
+1. You create a profile and get your own unique link  
+   (e.g. `https://notgonnalie.app/yourname`)
+
+2. Share that link on:
+   - Instagram bio
+   - Snapchat
+   - WhatsApp status
+   - Anywhere else
+
+3. People send you **anonymous messages** via that link
+
+4. You receive them in the app and can **reply** to them publicly
+
+That’s it. Straightforward and fun.
+
+---
+
+## ⚙️ Use Cases
+
+- 🫶 Secret confessions from friends or followers  
+- 🎓 Campus-wide Q&A or confession board  
+- 💬 Honest feedback from people around you  
+- 🤝 Getting closer to your online community
+
+---
+
+## 🛡️ Privacy & Safety First
+
+- Messages are **fully anonymous**
+- You’re always in control
+
+---
+
+## 👇 Example Messages
+
+> "Not gonna lie, I’ve liked you since 9th grade."  
+> "Why don’t you post your photography more often?"  
+> "I miss when we used to talk every day."  
+
+These are the type of real, raw things people send through NGL.
+
+---
+
+## 🌐 Link Preview
+
+Your public link looks like this:
+> 🚧 This feature is currently unavailable as it is still under active development. Please stay tuned for upcoming updates.
+
