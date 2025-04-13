@@ -86,4 +86,36 @@ router.get('/users', async (req, res) => {
 });
 
 
+// Get a single user by username and return their askLink
+router.get('/user/:username', async (req, res) => {
+    try {
+        const { username } = req.params;
+
+        // Find the user by username
+        const user = await User.findOne({ username }, 'username age askLink');
+
+        // If user not found
+        if (!user) {
+            return res.status(404).json({
+                message: 'User not found'
+            });
+        }
+
+        // Return user info
+        res.status(200).json({
+            message: 'User fetched successfully',
+            user
+        });
+
+    } catch (error) {
+        console.error("Error fetching user:", error);
+        res.status(500).json({
+            message: 'Error fetching user, backend might explode soon'
+        });
+    }
+});
+
+
+
+
 module.exports = router;

@@ -2,9 +2,12 @@ import { StyleSheet, Text, View, TextInput, Button, Alert } from 'react-native';
 import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { RadioButton } from "react-native-paper";
+import { useNavigation } from '@react-navigation/native'; // Import useNavigation
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Account = () => {
     const { control, handleSubmit } = useForm();
+    const navigation = useNavigation(); // Initialize navigation
 
     const onSubmit = async (data) => {
         try {
@@ -21,6 +24,14 @@ const Account = () => {
             if (response.ok) {
                 Alert.alert('Success', 'User registered successfully');
                 console.log(result);
+
+                // Save the user data to a temporary storage (e.g., AsyncStorage)
+                // Here, I assume you’re using something like AsyncStorage or Context API for managing login status
+                // Example with AsyncStorage (for persistent login):
+                await AsyncStorage.setItem('user', JSON.stringify(result.user));
+
+                // Redirect to the home screen after successful registration
+                navigation.navigate('Home'); // Navigate to Home screen
             } else {
                 Alert.alert('Error', result.message || 'Registration failed');
                 console.log(result);

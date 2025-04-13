@@ -1,9 +1,29 @@
 import { Text, View } from "react-native";
 import { Link } from "expo-router";
-import { Provider as PaperProvider } from "react-native-paper";
-// import Home from "./screens/Home";
+import { useEffect, useState } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Index() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  // Check if user is logged in
+  const checkLoginStatus = async () => {
+    try {
+      const userData = await AsyncStorage.getItem("user");
+      if (userData) {
+        setIsLoggedIn(true); // User is logged in
+      } else {
+        setIsLoggedIn(false); // User is not logged in
+      }
+    } catch (error) {
+      console.error("Error checking login status", error);
+    }
+  };
+
+  useEffect(() => {
+    checkLoginStatus(); // Check login status on component mount
+  }, []);
+
   return (
     <View
       style={{
@@ -35,37 +55,66 @@ export default function Index() {
           lineHeight: 22,
         }}
       >
-        Welcome to NGL by Tahsin Zidane — send and receive anonymous messages from your friends without knowing who said what. A safe space to know what people think!
+        Welcome to NGL by Tahsin Zidane — send and receive anonymous messages
+        from your friends without knowing who said what. A safe space to know
+        what people think!
       </Text>
 
-      <Link
-        href="/screens/account"
-        style={{
-          backgroundColor: "#04AA6D",
-          paddingVertical: 15,
-          paddingHorizontal: 32,
-          borderRadius: 12,
-          shadowColor: "#000",
-          shadowOffset: { width: 0, height: 2 },
-          shadowOpacity: 0.2,
-          shadowRadius: 4,
-          elevation: 3,
-        }}
-      >
-        <Text
+      {/* If logged in, show "Go to Inbox" */}
+      {isLoggedIn ? (
+        <Link
+          href="/Home"
           style={{
-            color: "#fff",
-            fontSize: 16,
-            fontWeight: "600",
-            textAlign: "center",
+            backgroundColor: "#04AA6D",
+            paddingVertical: 15,
+            paddingHorizontal: 32,
+            borderRadius: 12,
+            shadowColor: "#000",
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.2,
+            shadowRadius: 4,
+            elevation: 3,
           }}
         >
-          Get Your Inbox URL
-        </Text>
-      </Link>
-
-      <Link href={"/screens/Home"}>go to home</Link>
-
+          <Text
+            style={{
+              color: "#fff",
+              fontSize: 16,
+              fontWeight: "600",
+              textAlign: "center",
+            }}
+          >
+            Go to Inbox
+          </Text>
+        </Link>
+      ) : (
+        // If not logged in, show "Get Your Inbox URL"
+        <Link
+          href="/account"
+          style={{
+            backgroundColor: "#04AA6D",
+            paddingVertical: 15,
+            paddingHorizontal: 32,
+            borderRadius: 12,
+            shadowColor: "#000",
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.2,
+            shadowRadius: 4,
+            elevation: 3,
+          }}
+        >
+          <Text
+            style={{
+              color: "#fff",
+              fontSize: 16,
+              fontWeight: "600",
+              textAlign: "center",
+            }}
+          >
+            Get Your Inbox URL
+          </Text>
+        </Link>
+      )}
     </View>
   );
 }
