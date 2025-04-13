@@ -47,7 +47,14 @@ const Home = () => {
     return (
         <View style={styles.container}>
             <View style={styles.box}>
-                <Text style={styles.url}>Your Inbox URL: {userUrl}</Text>
+                <Text style={{
+                    color: "white",
+                    fontSize: 30,
+                    alignContent: "center",
+                    marginTop: 10   
+                }}>your inbox url</Text>
+
+                <Text style={styles.url}>{userUrl}</Text>
 
                 <Button
                     title="Copy URL"
@@ -91,6 +98,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(0, 122, 255, 0.25)',
         alignSelf: 'center',
         marginTop: 100,
+        justifyContent: "flex-start",
+        alignItems: "center",        
     },
     url: {
         fontSize: 18,

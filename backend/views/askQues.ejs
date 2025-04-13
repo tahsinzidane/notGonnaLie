@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Ask a question to <%= user.username %>
+    </h2>
+
+    <form action="/submit-question/<%= user._id %>" method="POST">
+        <textarea name="question" placeholder="Write your question..." required></textarea>
+        <button type="submit">Send</button>
+    </form>
+
+
+</body>
+
+</html>

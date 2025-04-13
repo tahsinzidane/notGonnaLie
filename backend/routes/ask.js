@@ -89,5 +89,23 @@ router.post('/submit-question/:userId', async (req, res) => {
     }
 });
 
+// get submit question UI
+router.get('/ask/:userId', async (req, res) => {
+    try {
+        const { userId } = req.params;
+
+        const user = await User.findById(userId); // fixed the syntax
+
+        if (!user) {
+            return res.status(404).send("User not found");
+        }
+
+        res.render('askQues', { user }); // send user to EJS if needed
+    } catch (error) {
+        console.error("Error loading question page:", error.message);
+        res.status(500).send("Something went wrong");
+    }
+});
+
 
 module.exports = router;
